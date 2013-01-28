@@ -12,11 +12,14 @@ class ArticlesController < ApplicationController
      #raise params.inspect
     @article= Article.new(params[:article])
     @article.save
+    flash.notice = "El articulo '#{@article.title}' fue creado"
     redirect_to article_path(@article)
   end
   def destroy 
     @article= Article.find(params[:id])
+    flash.notice= "El articulo '#{@article.title}' fue borrado"
     @article.destroy
+    
     redirect_to articles_path
   end
   def edit

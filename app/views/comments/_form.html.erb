@@ -1,0 +1,15 @@
+<h3>Agregar comentario</h3>
+<%= form_for([@article,@article.comments.build]) do |form_comment|  %>
+	
+	<p>
+		<%= form_comment.label :author_name%><br />
+		<%= form_comment.text_field :author_name%>
+	</p>
+	<p>
+		<%= form_comment.label :body%><br />
+		<%= form_comment.text_field :body%>
+	</p>
+	<p>
+		<%= form_comment.submit%>
+	</p>
+<%end%>
